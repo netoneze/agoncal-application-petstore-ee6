@@ -5,6 +5,7 @@ import javax.persistence.Embeddable;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import lombok.NonNull;
+import lombok.var;
 
 /**
  * @author Antonio Goncalves
@@ -127,7 +128,7 @@ public class Address {
 
     @Override
     public int hashCode() {
-        int result = street1.hashCode();
+        var result = street1.hashCode();
         result = 31 * result + (street2 != null ? street2.hashCode() : 0);
         result = 31 * result + city.hashCode();
         result = 31 * result + (state != null ? state.hashCode() : 0);
@@ -138,7 +139,7 @@ public class Address {
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder();
+        final var sb = new StringBuilder();
         sb.append("Address");
         sb.append("{street1='").append(street1).append('\'');
         sb.append(", street2='").append(street2).append('\'');
