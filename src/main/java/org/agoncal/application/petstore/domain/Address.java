@@ -4,6 +4,7 @@ import javax.persistence.Column;
 import javax.persistence.Embeddable;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import lombok.NonNull;
 
 /**
  * @author Antonio Goncalves
@@ -44,7 +45,7 @@ public class Address {
     public Address() {
     }
 
-    public Address(String street1, String city, String zipcode, String country) {
+    public Address(@NonNull String street1, @NonNull String city, @NonNull String zipcode, @NonNull String country) {
         this.street1 = street1;
         this.city = city;
         this.zipcode = zipcode;
